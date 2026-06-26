@@ -1,11 +1,12 @@
 baseURL = 'https://me9uru.github.io/'
-locale = 'en-us'
+locale = 'zh-cn'
 title = "Me9uru's Blog"
 theme = 'PaperMod'
+paginate = 10
 
 [params]
   author = 'Me9uru'
-  description = 'My personal blog'
+  description = '分享技术、思考与生活'
   defaultTheme = 'auto'
   ShowShareButtons = true
   ShowReadingTime = true
@@ -22,22 +23,55 @@ theme = 'PaperMod'
   tocopen = true
   comments = false
   math = false
+  ShowToc = true
+  TocOpen = true
 
   [params.homeInfoParams]
     Title = "Hi, I'm Me9uru 👋"
-    Content = 'Welcome to my personal blog. Here I share my thoughts, projects, and learnings.'
+    Content = '一个热爱技术的开发者，这里记录我的学习笔记、项目经验与日常思考。'
 
   [[params.socialIcons]]
     name = 'github'
     url = 'https://github.com/Me9uru'
 
+  [[params.socialIcons]]
+    name = 'email'
+    url = 'mailto:mengyou.511@gmail.com'
+
   [params.editPost]
     URL = 'https://github.com/Me9uru/Me9uru.github.io/edit/main/content'
-    Text = 'Edit this page'
+    Text = '编辑此页'
     appendFilePath = true
 
   [params.assets]
     disableHLJS = false
+    customCSS = ["css/custom.css"]
+
+  [params.cover]
+    hiddenInList = false
+    hiddenInSingle = false
+
+[menu]
+  [[menu.main]]
+    identifier = 'posts'
+    name = '文章'
+    url = '/posts/'
+    weight = 10
+  [[menu.main]]
+    identifier = 'tags'
+    name = '标签'
+    url = '/tags/'
+    weight = 20
+  [[menu.main]]
+    identifier = 'archives'
+    name = '归档'
+    url = '/archives/'
+    weight = 30
+  [[menu.main]]
+    identifier = 'about'
+    name = '关于'
+    url = '/about/'
+    weight = 40
 
 [outputs]
   home = ['HTML', 'RSS', 'JSON']
@@ -46,3 +80,11 @@ theme = 'PaperMod'
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.highlight]
+    codeFences = true
+    lineNos = false
+    style = 'monokai'
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'

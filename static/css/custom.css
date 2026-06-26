@@ -1,0 +1,27 @@
+:root {
+    --theme-accent-color: #2563eb;
+}
+
+.intro {
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+.post-entry {
+    border-left: 3px solid var(--theme-accent-color);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.post-entry:hover {
+    background-color: rgba(37, 99, 235, 0.05);
+    border-radius: 8px;
+}
+
+.tag {
+    background-color: var(--theme-accent-color);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.85em;
+}
