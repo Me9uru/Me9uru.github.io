@@ -1,80 +1,42 @@
 baseURL = 'https://me9uru.github.io/'
 locale = 'zh-cn'
 title = "Me9uru's Blog"
-theme = 'PaperMod'
+theme = 'hugo-theme-stack'
 paginate = 10
 
 [params]
   author = 'Me9uru'
   description = '分享技术、思考与生活'
-  defaultTheme = 'auto'
-  ShowShareButtons = true
-  ShowReadingTime = true
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowWordCount = true
-  ShowRssButtonInSectionTermList = true
-  UseHugoToc = true
-  disableSpecial1stPost = false
-  hidemeta = false
-  hideSummary = false
-  showtoc = true
-  tocopen = true
-  comments = false
+
+[params.sidebar]
+  avatar = ""
+  compact = false
+
+[params.footer]
+  since = 2026
+  customText = ""
+
+[params.article]
   math = false
-  ShowToc = true
-  TocOpen = true
+  toc = true
+  readingTime = true
 
-  [params.homeInfoParams]
-    Title = "Hi, I'm Me9uru 👋"
-    Content = '一个热爱技术的开发者，这里记录我的学习笔记、项目经验与日常思考。'
+[params.article.list]
+  showTags = true
 
-  [[params.socialIcons]]
-    name = 'github'
-    url = 'https://github.com/Me9uru'
+[params.colorScheme]
+  toggle = true
+  default = "auto"
 
-  [[params.socialIcons]]
-    name = 'email'
-    url = 'mailto:mengyou.511@gmail.com'
+[params.comments]
+  enabled = false
 
-  [params.editPost]
-    URL = 'https://github.com/Me9uru/Me9uru.github.io/edit/main/content'
-    Text = '编辑此页'
-    appendFilePath = true
-
-  [params.assets]
-    disableHLJS = false
-    customCSS = ["css/custom.css"]
-
-  [params.cover]
-    hiddenInList = false
-    hiddenInSingle = false
-
-[menu]
-  [[menu.main]]
-    identifier = 'posts'
-    name = '文章'
-    url = '/posts/'
-    weight = 10
-  [[menu.main]]
-    identifier = 'tags'
-    name = '标签'
-    url = '/tags/'
-    weight = 20
-  [[menu.main]]
-    identifier = 'archives'
-    name = '归档'
-    url = '/archives/'
-    weight = 30
-  [[menu.main]]
-    identifier = 'about'
-    name = '关于'
-    url = '/about/'
-    weight = 40
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
 
 [outputs]
-  home = ['HTML', 'RSS', 'JSON']
+  home = ['HTML', 'RSS']
 
 [markup]
   [markup.goldmark]
@@ -85,6 +47,20 @@ paginate = 10
     lineNos = false
     style = 'monokai'
 
-[taxonomies]
-  tag = 'tags'
-  category = 'categories'
+[menus]
+  [[menus.main]]
+    name = '文章'
+    url = '/post/'
+    weight = 10
+  [[menus.main]]
+    name = '标签'
+    url = '/tags/'
+    weight = 20
+  [[menus.main]]
+    name = '分类'
+    url = '/categories/'
+    weight = 30
+  [[menus.main]]
+    name = '关于'
+    url = '/about/'
+    weight = 40
