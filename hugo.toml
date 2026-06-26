@@ -1,0 +1,48 @@
+baseURL = 'https://me9uru.github.io/'
+locale = 'en-us'
+title = "Me9uru's Blog"
+theme = 'PaperMod'
+
+[params]
+  author = 'Me9uru'
+  description = 'My personal blog'
+  defaultTheme = 'auto'
+  ShowShareButtons = true
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = true
+  tocopen = true
+  comments = false
+  math = false
+
+  [params.homeInfoParams]
+    Title = "Hi, I'm Me9uru 👋"
+    Content = 'Welcome to my personal blog. Here I share my thoughts, projects, and learnings.'
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/Me9uru'
+
+  [params.editPost]
+    URL = 'https://github.com/Me9uru/Me9uru.github.io/edit/main/content'
+    Text = 'Edit this page'
+    appendFilePath = true
+
+  [params.assets]
+    disableHLJS = false
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
