@@ -1,0 +1,63 @@
+{{ define "main" }}
+    <section class="home-hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+            <div class="hero-topline">
+                <span class="hero-eyebrow">ME9URU / PERSONAL LAB</span>
+                <span class="hero-status"><i></i> ONLINE</span>
+            </div>
+            <h1 id="hero-title">把<span class="hero-mark">灵感</span><br>编译成现实<span class="hero-pixel">.</span></h1>
+            <p>{{ .Site.Params.description }}</p>
+            <div class="hero-actions">
+                <a class="hero-primary" href="{{ `/post/` | relURL }}">阅读文章 <span aria-hidden="true">→</span></a>
+                <a class="hero-secondary" href="{{ `/about/` | relURL }}">关于我</a>
+            </div>
+        </div>
+        <div class="hero-console" aria-label="个人简介代码片段">
+            <div class="console-bar">
+                <div><i></i><i></i><i></i></div>
+                <span>me9uru.go</span>
+                <b>⌁</b>
+            </div>
+            <div class="console-body">
+                <p><em>01</em><span class="c-purple">package</span> main</p>
+                <p><em>02</em></p>
+                <p><em>03</em><span class="c-purple">type</span> Me9uru <span class="c-purple">struct</span> {</p>
+                <p><em>04</em>&nbsp;&nbsp;Curiosity <span class="c-green">string</span></p>
+                <p><em>05</em>&nbsp;&nbsp;Coffee&nbsp;&nbsp;&nbsp; <span class="c-green">int</span></p>
+                <p><em>06</em>}</p>
+                <p><em>07</em></p>
+                <p><em>08</em><span class="c-purple">func</span> create() {</p>
+                <p><em>09</em>&nbsp;&nbsp;fmt.Println(<span class="c-orange">"hello, world_"</span>)</p>
+                <p><em>10</em>}</p>
+            </div>
+            <span class="console-sticker">持续折腾中</span>
+            <span class="console-year">© 2026</span>
+        </div>
+    </section>
+
+    <div class="idea-strip" aria-hidden="true">
+        <div>GO LANG <i>✦</i> OPEN SOURCE <i>✦</i> BUILD IN PUBLIC <i>✦</i> LIFE NOTES <i>✦</i> STAY CURIOUS <i>✦</i> GO LANG <i>✦</i> OPEN SOURCE <i>✦</i></div>
+    </div>
+
+    <div class="section-heading">
+        <div>
+            <span>RECENT WRITING</span>
+            <h2>最近更新</h2>
+        </div>
+        <a href="{{ `/post/` | relURL }}">查看全部 <span aria-hidden="true">↗</span></a>
+    </div>
+
+    {{- $paginator := partial "helper/paginator.html" . -}}
+    <section class="article-list">
+        {{ range $paginator.Pages }}
+            {{ partial "article-list/default" . }}
+        {{ end }}
+    </section>
+
+    {{- partial "pagination.html" . -}}
+    {{- partial "footer/footer" . -}}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
+{{ end }}

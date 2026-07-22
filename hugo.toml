@@ -1,5 +1,6 @@
 baseURL = 'https://me9uru.github.io/'
 locale = 'zh-cn'
+defaultContentLanguage = 'zh'
 title = "Me9uru's Blog"
 theme = 'hugo-theme-stack'
 paginate = 10
@@ -10,6 +11,7 @@ paginate = 10
 
 [params.sidebar]
   avatar = ""
+  subtitle = '在代码与生活之间，持续探索。'
   compact = false
 
 [params.footer]
@@ -52,15 +54,23 @@ paginate = 10
     name = '文章'
     url = '/post/'
     weight = 10
+    [menus.main.params]
+      icon = 'archives'
   [[menus.main]]
     name = '标签'
     url = '/tags/'
     weight = 20
+    [menus.main.params]
+      icon = 'tag'
   [[menus.main]]
     name = '分类'
     url = '/categories/'
     weight = 30
+    [menus.main.params]
+      icon = 'categories'
   [[menus.main]]
     name = '关于'
     url = '/about/'
     weight = 40
+    [menus.main.params]
+      icon = 'user'
